@@ -2,9 +2,9 @@
 
 PyTorch implementation of [**Self-Supervised High Dynamic Range Imaging with Multi-Exposure Images in Dynamic Scenes**](https://arxiv.org) 
 
-In this work, we take advantage of the internal characteristics of the multi-exposure images to propose a self-supervised HDR reconstruction approach SelfHDR, which achieves comparable performance to supervised ones.
+- In this work, we take advantage of the internal characteristics of the multi-exposure images to propose a self-supervised HDR reconstruction approach SelfHDR, which achieves comparable performance to supervised ones.
 
-Codes will be released in a few weeks.
+- Codes will be released in a few weeks.
 
 
 ## 1. Abstract
@@ -17,7 +17,7 @@ Merging multi-exposure images is a common approach for obtaining high dynamic ra
 <p align="center"><img src="selfhdr.png" width="95%"></p>
 <p align="center">Overview of our proposed SelfHDR framework.</p>
 
-- During training, we first construct color and structure components (\ie, $\bm{Y}_{color}$ and $\bm{Y}_{stru}$), then take $\bm{Y}_{color}$ and $\bm{Y}_{stru}$ for supervising the HDR reconstruction network. Dotted lines with different colors represent different loss terms.
+- During training, we first construct color and structure components (*i.e.*, ${Y}_{color}$ and ${Y}_{stru}$), then take ${Y}_{color}$ and ${Y}_{stru}$ for supervising the HDR reconstruction network. Dotted lines with different colors represent different loss terms.
 - During testing, the HDR reconstruction network can be used to predict HDR images from unseen multi-exposure images. 
 
 
