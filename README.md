@@ -17,7 +17,7 @@ Merging multi-exposure images is a common approach for obtaining high dynamic ra
 <p align="center"><img src="selfhdr.png" width="95%"></p>
 <p align="center">Overview of our proposed SelfHDR framework.</p>
 
-- During training, we first construct color and structure components (*i.e.*, ${Y}_{color}$ and ${Y}_{stru}$), then take ${Y}_{color}$ and ${Y}_{stru}$ for supervising the HDR reconstruction network. Dotted lines with different colors represent different loss terms.
+- During training, we first construct color and structure components (*i.e.*, $Y_{color}$ and $Y_{stru}$), then take $Y_{color}$ and $Y_{stru}$ for supervising the HDR reconstruction network. Dotted lines with different colors represent different loss terms.
 - During testing, the HDR reconstruction network can be used to predict HDR images from unseen multi-exposure images. 
 
 
