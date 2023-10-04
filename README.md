@@ -1,6 +1,6 @@
 # SelfHDR
 
-PyTorch implementation of [**Self-Supervised High Dynamic Range Imaging with Multi-Exposure Images in Dynamic Scenes**](https://arxiv.org) 
+PyTorch implementation of [**Self-Supervised High Dynamic Range Imaging with Multi-Exposure Images in Dynamic Scenes**](https://arxiv.org/abs/2310.01840) 
 
 - In this work, we take advantage of the internal characteristics of the multi-exposure images to propose a self-supervised HDR reconstruction approach SelfHDR, which achieves comparable performance to supervised ones.
 
