@@ -2,6 +2,9 @@
 
 PyTorch implementation of [**Self-Supervised High Dynamic Range Imaging with Multi-Exposure Images in Dynamic Scenes**](https://arxiv.org/abs/2310.01840) 
 
+[![arXiv](https://img.shields.io/badge/arXiv-2310.01840-b10.svg)](https://arxiv.org/abs/2310.01840)
+![visitors](https://visitor-badge.laobi.icu/badge?page_id=cszhilu1998.SelfHDR)
+
 - In this work, we take advantage of the internal characteristics of the multi-exposure images to propose a self-supervised HDR reconstruction approach SelfHDR, which achieves comparable performance to supervised ones.
 
 - Codes will be released in a few weeks.
@@ -26,3 +29,5 @@ Merging multi-exposure images is a common approach for obtaining high dynamic ra
 ## 3. Results
 
 <p align="center"><img src="results.png" width="95%"></p>
+
+
