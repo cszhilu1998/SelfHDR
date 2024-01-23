@@ -44,7 +44,7 @@
     - Python 3.x and **PyTorch 1.12**.
     - OpenCV, NumPy, Pillow, timm, tqdm, imageio, lpips, scikit-image and tensorboardX.
 
-- **Dataset and pre-trained models **
+- **Dataset and pre-trained models**
     - **Dataset and pre-trained models** can be downloaded from this [link](https://pan.baidu.com/s/1XsIiXmN_5wn_dfz4SsyTNA?pwd=i7fc).
     - Place the pre-trained models in the `./pretrained_models/` folder.
 
