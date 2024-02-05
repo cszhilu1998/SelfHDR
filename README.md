@@ -19,6 +19,8 @@
 
 * **`TODO`:** *image alignment method, HDR image tone mapping visualization, and HDR-VDP metric calculation*
 
+* **`2024-02-04`:** *We organize the Bracketing Image Restoration and Enhancement Challenge in [NTIRE 2024](https://cvlai.net/ntire/2024/) (CVPR Workshop), including [Track 1 (BracketIRE Task)](https://codalab.lisn.upsaclay.fr/competitions/17573) and [Track 2 (BracketIRE+ Task)](https://codalab.lisn.upsaclay.fr/competitions/17574). Details can bee seen in [BracketIRE](https://github.com/cszhilu1998/BracketIRE/tree/master/NTIRE2024/README.md). Welcome to participate!*
+
 * **`2024-01-24`:** *The basic codes and pre-trained models are released. (The codes have been restructured. If there are any problems with the codes, please contact us.)*
 
 * **`2024-01-17`:** *Our SelfHDR is accepted a poster paper in [**ICLR 2024**](https://openreview.net/forum?id=jjiOHEcS2c).*
