@@ -5,12 +5,13 @@
 *PyTorch implementation of **Self-Supervised High Dynamic Range Imaging with Multi-Exposure Images in Dynamic Scenes** (ICLR 2024)*
 
 
+Authors: [Zhilu Zhang](https://scholar.google.com/citations?user=8pIq2N0AAAAJ&hl=zh-CN&oi=ao), Haoyu Wang, Shuai Liu, Xiaotao Wang, Lei Lei, [Wangmeng Zuo](https://scholar.google.com/citations?hl=zh-CN&user=rUOpCEYAAAAJ)
+
 [**OpenReview**](https://openreview.net/forum?id=jjiOHEcS2c) &nbsp; | &nbsp; 
 [![arXiv](https://img.shields.io/badge/arXiv-2310.01840-b10.svg)](https://arxiv.org/abs/2310.01840) &nbsp; | &nbsp; 
 ![visitors](https://visitor-badge.laobi.icu/badge?page_id=cszhilu1998.SelfHDR)
 
 
-[Zhilu Zhang](https://scholar.google.com/citations?user=8pIq2N0AAAAJ&hl=zh-CN&oi=ao), Haoyu Wang, Shuai Liu, Xiaotao Wang, Lei Lei, [Wangmeng Zuo](https://scholar.google.com/citations?hl=zh-CN&user=rUOpCEYAAAAJ)
 
 
 <p align="center"><img src="Poster.png" width="100%"></p>
