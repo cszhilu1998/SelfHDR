@@ -13,7 +13,7 @@
 [Zhilu Zhang](https://scholar.google.com/citations?user=8pIq2N0AAAAJ&hl=zh-CN&oi=ao), Haoyu Wang, Shuai Liu, Xiaotao Wang, Lei Lei, [Wangmeng Zuo](https://scholar.google.com/citations?hl=zh-CN&user=rUOpCEYAAAAJ)
 
 
-**Abstract**: Merging multi-exposure images is a common approach for obtaining high dynamic range (HDR) images, with the primary challenge being the avoidance of ghosting artifacts in dynamic scenes. Recent methods have proposed using deep neural networks for deghosting. However, the methods typically rely on sufficient data with HDR ground-truths, which are difficult and costly to collect. In this work, to eliminate the need for labeled data, we propose SelfHDR, a self-supervised HDR reconstruction method that only requires dynamic multi-exposure images during training. Specifically, SelfHDR learns a reconstruction network under the supervision of two complementary components, which can be constructed from multi-exposure images and focus on HDR color as well as structure, respectively. The color component is estimated from aligned multi-exposure images, while the structure one is generated through a structure-focused network that is supervised by the color component and an input reference (\eg, medium-exposure) image. During testing, the learned reconstruction network is directly deployed to predict an HDR image. Experiments on real-world images demonstrate our SelfHDR achieves superior results against the state-of-the-art self-supervised methods, and comparable performance to supervised ones. 
+<p align="center"><img src="Poster.png" width="100%"></p>
 
 ## News
 
@@ -30,13 +30,17 @@
 
 
 
-## 1. Framework
+## 1. Abstract
 
+
+
+Merging multi-exposure images is a common approach for obtaining high dynamic range (HDR) images, with the primary challenge being the avoidance of ghosting artifacts in dynamic scenes. Recent methods have proposed using deep neural networks for deghosting. However, the methods typically rely on sufficient data with HDR ground-truths, which are difficult and costly to collect. In this work, to eliminate the need for labeled data, we propose SelfHDR, a self-supervised HDR reconstruction method that only requires dynamic multi-exposure images during training. Specifically, SelfHDR learns a reconstruction network under the supervision of two complementary components, which can be constructed from multi-exposure images and focus on HDR color as well as structure, respectively. The color component is estimated from aligned multi-exposure images, while the structure one is generated through a structure-focused network that is supervised by the color component and an input reference (\eg, medium-exposure) image. During testing, the learned reconstruction network is directly deployed to predict an HDR image. Experiments on real-world images demonstrate our SelfHDR achieves superior results against the state-of-the-art self-supervised methods, and comparable performance to supervised ones. 
+<!-- 
 <p align="center"><img src="selfhdr.png" width="95%"></p>
 <p align="center">Overview of our proposed SelfHDR framework.</p>
 
 - During training, we first construct color and structure components (*i.e.*, $Y_{color}$ and $Y_{stru}$), then take $Y_{color}$ and $Y_{stru}$ for supervising the HDR reconstruction network. Dotted lines with different colors represent different loss terms.
-- During testing, the HDR reconstruction network can be used to predict HDR images from unseen multi-exposure images. 
+- During testing, the HDR reconstruction network can be used to predict HDR images from unseen multi-exposure images.  -->
 
 
 
@@ -81,14 +85,14 @@
 - You can refer to [options](./options/base_options.py) for more arguments.
 
 
-
+<!-- 
 ## 4. Results
 
-<p align="center"><img src="results.png" width="95%"></p>
+<p align="center"><img src="results.png" width="95%"></p> -->
 
 
 
-## 5. Citation
+## 4. Citation
 If you find it useful in your research, please consider citing:
 
     @inproceedings{SelfHDR,
@@ -98,7 +102,7 @@ If you find it useful in your research, please consider citing:
         year={2024}
     }
 
-## 6. Acknowledgement
+## 5. Acknowledgement
 
 This repo is built upon the framework of [CycleGAN](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix), and we borrow some codes from [AHDRNet](https://github.com/liuzhen03/AHDRNet), [FSHDR](https://github.com/Susmit-A/FSHDR), [HDR-Transformer](https://github.com/liuzhen03/HDR-Transformer-PyTorch) and [SCTNet](https://github.com/Zongwei97/SCTNet). Thanks for their excellent works!
     
