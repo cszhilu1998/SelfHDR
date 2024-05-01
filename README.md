@@ -10,10 +10,7 @@
 > [Zhilu Zhang](https://scholar.google.com/citations?user=8pIq2N0AAAAJ&hl=zh-CN&oi=ao)$^1$, [Haoyu Wang](./)$^1$, [Shuai Liu](./), [Xiaotao Wang](./), [Lei Lei](./), [Wangmeng Zuo](https://scholar.google.com/citations?hl=zh-CN&user=rUOpCEYAAAAJ)$^1$
 <br>$^1$ Harbin Institute of Technology, China
 
-
-[**OpenReview**](https://openreview.net/forum?id=jjiOHEcS2c) &nbsp; | &nbsp; 
-[![arXiv](https://img.shields.io/badge/arXiv-2310.01840-b10.svg)](https://arxiv.org/abs/2310.01840) &nbsp; | &nbsp; 
-![visitors](https://visitor-badge.laobi.icu/badge?page_id=cszhilu1998.SelfHDR)
+[**OpenReview**](https://openreview.net/forum?id=jjiOHEcS2c) &nbsp; | &nbsp;   [![arXiv](https://img.shields.io/badge/arXiv-2310.01840-b10.svg)](https://arxiv.org/abs/2310.01840) &nbsp; | &nbsp;  ![visitors](https://visitor-badge.laobi.icu/badge?page_id=cszhilu1998.SelfHDR)
 
 
 
@@ -86,8 +83,8 @@ Merging multi-exposure images is a common approach for obtaining high dynamic ra
 ### 3.3 Tone Mapping and HDR-VDP Calculation
 
 - We adopt `hdrvdp-2.2.2` toolkit, and you can download it from this [link](https://sourceforge.net/projects/hdrvdp/files/hdrvdp/2.2.2/).
-- Then we write code in `Content.m` and execute it.
-- Code example in `Content.m`:
+- Then we write code in `Contents.m` and execute it.
+- Code example in `Contents.m`:
 
 ```
     % Load HDR Images
@@ -101,7 +98,9 @@ Merging multi-exposure images is a common approach for obtaining high dynamic ra
     % Calculate HDR-VDP Metric 
     ppd = hdrvdp_pix_per_deg(24, [size(out,2) size(out,1)], 0.5);
     metric = hdrvdp(target, out, 'sRGB-display', ppd);
-    metric.Q % Value of HDR-VDP Metric
+    
+    % Print Value of HDR-VDP Metric
+    metric.Q 
 ```
 
 ### 3.4 Note
@@ -122,7 +121,7 @@ If you find it useful in your research, please consider citing:
 
     @inproceedings{SelfHDR,
         title={Self-Supervised High Dynamic Range Imaging with Multi-Exposure Images in Dynamic Scenes},
-        author={Zhilu Zhang, Haoyu Wang, Shuai Liu, Xiaotao Wang, Lei Lei, and Wangmeng Zuo},
+        author={Zhang, Zhilu and Wang, Haoyu and Liu, Shuai and Wang, Xiaotao and Lei, Lei and Zuo, Wangmeng},
         booktitle={ICLR},
         year={2024}
     }
