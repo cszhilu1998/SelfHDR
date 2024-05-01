@@ -2,10 +2,14 @@
 # SelfHDR (ICLR 2024)
 
 
-*PyTorch implementation of **Self-Supervised High Dynamic Range Imaging with Multi-Exposure Images in Dynamic Scenes** (ICLR 2024)*
+*Official PyTorch implementation of **SelfHDR** (ICLR 2024)* 
 
 
-Authors: [Zhilu Zhang](https://scholar.google.com/citations?user=8pIq2N0AAAAJ&hl=zh-CN&oi=ao), Haoyu Wang, Shuai Liu, Xiaotao Wang, Lei Lei, [Wangmeng Zuo](https://scholar.google.com/citations?hl=zh-CN&user=rUOpCEYAAAAJ)
+> [**Self-Supervised High Dynamic Range Imaging with Multi-Exposure Images in Dynamic Scenes**](https://arxiv.org/abs/2310.01840)<br>
+> ICLR 2024<br>
+> [Zhilu Zhang](https://scholar.google.com/citations?user=8pIq2N0AAAAJ&hl=zh-CN&oi=ao), [Haoyu Wang](./), [Shuai Liu](./), [Xiaotao Wang](./), [Lei Lei](./), [Wangmeng Zuo](https://scholar.google.com/citations?hl=zh-CN&user=rUOpCEYAAAAJ)
+<br>Harbin Institute of Technology, China
+
 
 [**OpenReview**](https://openreview.net/forum?id=jjiOHEcS2c) &nbsp; | &nbsp; 
 [![arXiv](https://img.shields.io/badge/arXiv-2310.01840-b10.svg)](https://arxiv.org/abs/2310.01840) &nbsp; | &nbsp; 
@@ -18,15 +22,15 @@ Authors: [Zhilu Zhang](https://scholar.google.com/citations?user=8pIq2N0AAAAJ&hl
 
 ## News
 
-* **`TODO`:** *image alignment method, HDR image tone mapping visualization, and HDR-VDP metric calculation*
+* **`2024-05-01`:** *Codes for image alignment, HDR image tone mapping visualization, and HDR-VDP metric calculation are released.*
 
 * **`2024-02-04`:** *We organize the Bracketing Image Restoration and Enhancement Challenge in [NTIRE 2024](https://cvlai.net/ntire/2024/) (CVPR Workshop), including [Track 1 (BracketIRE Task)](https://codalab.lisn.upsaclay.fr/competitions/17573) and [Track 2 (BracketIRE+ Task)](https://codalab.lisn.upsaclay.fr/competitions/17574). Details can bee seen in [BracketIRE](https://github.com/cszhilu1998/BracketIRE/tree/master/NTIRE2024/README.md). Welcome to participate!*
 
 * **`2024-01-24`:** *The basic codes and pre-trained models are released. (The codes have been restructured. If there are any problems with the codes, please contact us.)*
 
-* **`2024-01-17`:** *Our SelfHDR is accepted a poster paper in [**ICLR 2024**](https://openreview.net/forum?id=jjiOHEcS2c).*
+* **`2024-01-17`:** *Our SelfHDR is accepted a poster paper in [ICLR 2024](https://openreview.net/forum?id=jjiOHEcS2c).*
 
-* **`2024-01-01`:** *In our latest work [**BracketIRE**](https://arxiv.org/abs/2401.00766), we utilize bracketing photography to unify image restoration and enhancement (including  denoising, deblurring, high dynamic range imaging, and super-resolution) tasks.*
+* **`2024-01-01`:** *In our latest work [BracketIRE](https://arxiv.org/abs/2401.00766), we utilize bracketing photography to unify image restoration and enhancement (including  denoising, deblurring, high dynamic range imaging, and super-resolution) tasks.*
 
 
 
@@ -47,14 +51,18 @@ Merging multi-exposure images is a common approach for obtaining high dynamic ra
 
 ## 2. Preparation, datasets and pre-trained models
 
-- **Prerequisites**
-    - Python 3.x and **PyTorch 1.12**.
-    - OpenCV, NumPy, Pillow, timm, tqdm, imageio, lpips, scikit-image and tensorboardX.
+### 2.1 Prerequisites
+- Python 3.x and **PyTorch 1.12**.
+- OpenCV, NumPy, Pillow, timm, tqdm, imageio, lpips, scikit-image and tensorboardX.
 
-- **Dataset and pre-trained models**
-    - **Dataset and pre-trained models** can be downloaded from this [link](https://pan.baidu.com/s/1XsIiXmN_5wn_dfz4SsyTNA?pwd=i7fc).
-    - Place the pre-trained models in the `./pretrained_models/` folder.
+### 2.2  Dataset and Pre-Trained Models
+- Dataset and pre-trained models can be downloaded from this [link](https://pan.baidu.com/s/1XsIiXmN_5wn_dfz4SsyTNA?pwd=i7fc).
+- Place the pre-trained models in the `./pretrained_models/` folder.
 
+### 2.3  Image Alignment
+
+- In the dataset, the folders ending with `_align` contain aligned multi-exposure images.
+- We adopt the same alignment method with [FSHDR](https://openaccess.thecvf.com/content/CVPR2021/html/Prabhakar_Labeled_From_Unlabeled_Exploiting_Unlabeled_Data_for_Few-Shot_Deep_HDR_CVPR_2021_paper.html). The alignment codes can be seen in https://github.com/Susmit-A/FSHDR/tree/master/matlab_liu_code.
     
 
 ## 3. Quick Start
@@ -70,17 +78,36 @@ Merging multi-exposure images is a common approach for obtaining high dynamic ra
     - Training settings for [HDR-Transformer](https://arxiv.org/abs/2208.05114) and [SCTNet](https://arxiv.org/abs/2305.18135):
         - `batch_size`=8, `niter`=200, `lr_decay_iters`=100, `lr`=0.0002 
 
-- Run:
-
-    [`sh train.sh`](train.sh)
+- Run [`sh train.sh`](train.sh)
 
 ### 3.2 Testing
 
-- Modify `dataroot`, `name`, `net` and `iter` in `test.sh` and then run:
+- Modify `dataroot`, `name`, `net` and `iter` in `test.sh`
 
-    [`sh test.sh`](test.sh)
+- Run [`sh test.sh`](test.sh)
 
-### 3.3 Note
+### 3.3 Tone Mapping and HDR-VDP Calculation
+
+- We adopt HDR-VDP-2.2.2 toolkit, and you can download it from this [link](https://sourceforge.net/projects/hdrvdp/files/hdrvdp/2.2.2/).
+- Then we write code in `Content.m` and execute it.
+- Code example in `Content.m`:
+
+```
+    % Load HDR Images
+    target = double(hdrread('tatget.hdr')); 
+    out = double(hdrread('output.hdr'));
+
+    % HDR Output Tone Mapping Visualization
+    tonemap_img = tonemap(out, 'AdjustLightness', [0,1], 'AdjustSaturation', 5.3);
+    imwrite(tonemap_img, 'tonemap.png');
+
+    % Calculate HDR-VDP Metric 
+    ppd = hdrvdp_pix_per_deg(24, [size(out,2) size(out,1)], 0.5);
+    metric = hdrvdp(target, out, 'sRGB-display', ppd);
+    metric.Q % Value of HDR-VDP Metric
+```
+
+### 3.4 Note
 
 - You can specify which GPU to use by `--gpu_ids`, e.g., `--gpu_ids 0,1`, `--gpu_ids 3`, `--gpu_ids -1` (for CPU mode). In the default setting, all GPUs are used.
 - You can refer to [options](./options/base_options.py) for more arguments.
@@ -100,6 +127,15 @@ If you find it useful in your research, please consider citing:
         title={Self-Supervised High Dynamic Range Imaging with Multi-Exposure Images in Dynamic Scenes},
         author={Zhilu Zhang, Haoyu Wang, Shuai Liu, Xiaotao Wang, Lei Lei, and Wangmeng Zuo},
         booktitle={ICLR},
+        year={2024}
+    }
+
+If you are interested in our follow-up work, i.e., [Exposure Bracketing is All You Need](https://github.com/cszhilu1998/BracketIRE), please consider citing:
+
+    @article{BracketIRE,
+        title={Exposure Bracketing is All You Need for Unifying Image Restoration and Enhancement Tasks},
+        author={Zhang, Zhilu and Zhang, Shuohao and Wu, Renlong and Yan, Zifei and Zuo, Wangmeng},
+        journal={arXiv preprint arXiv:2401.00766},
         year={2024}
     }
 
