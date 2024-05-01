@@ -7,8 +7,8 @@
 
 > [**Self-Supervised High Dynamic Range Imaging with Multi-Exposure Images in Dynamic Scenes**](https://arxiv.org/abs/2310.01840)<br>
 > ICLR 2024<br>
-> [Zhilu Zhang](https://scholar.google.com/citations?user=8pIq2N0AAAAJ&hl=zh-CN&oi=ao), [Haoyu Wang](./), [Shuai Liu](./), [Xiaotao Wang](./), [Lei Lei](./), [Wangmeng Zuo](https://scholar.google.com/citations?hl=zh-CN&user=rUOpCEYAAAAJ)
-<br>Harbin Institute of Technology, China
+> [Zhilu Zhang](https://scholar.google.com/citations?user=8pIq2N0AAAAJ&hl=zh-CN&oi=ao)$^1$, [Haoyu Wang](./)$^1$, [Shuai Liu](./), [Xiaotao Wang](./), [Lei Lei](./), [Wangmeng Zuo](https://scholar.google.com/citations?hl=zh-CN&user=rUOpCEYAAAAJ)$^1$
+<br>$^1$ Harbin Institute of Technology, China
 
 
 [**OpenReview**](https://openreview.net/forum?id=jjiOHEcS2c) &nbsp; | &nbsp; 
@@ -71,24 +71,21 @@ Merging multi-exposure images is a common approach for obtaining high dynamic ra
 ### 3.1 Training
 
 - Modify `dataroot`, `name`, `net`, `batch_size`, `niter`, `lr_decay_iters`, and `lr` in `train.sh`:
-
     - Training settings for [AHDRNet](https://arxiv.org/abs/1904.10293) and [FSHDR](https://openaccess.thecvf.com/content/CVPR2021/html/Prabhakar_Labeled_From_Unlabeled_Exploiting_Unlabeled_Data_for_Few-Shot_Deep_HDR_CVPR_2021_paper.html):
         - `batch_size`=16, `niter`=150, `lr_decay_iters`=50, `lr`=0.0001 
-
     - Training settings for [HDR-Transformer](https://arxiv.org/abs/2208.05114) and [SCTNet](https://arxiv.org/abs/2305.18135):
         - `batch_size`=8, `niter`=200, `lr_decay_iters`=100, `lr`=0.0002 
-
+        
 - Run [`sh train.sh`](train.sh)
 
 ### 3.2 Testing
 
 - Modify `dataroot`, `name`, `net` and `iter` in `test.sh`
-
 - Run [`sh test.sh`](test.sh)
 
 ### 3.3 Tone Mapping and HDR-VDP Calculation
 
-- We adopt HDR-VDP-2.2.2 toolkit, and you can download it from this [link](https://sourceforge.net/projects/hdrvdp/files/hdrvdp/2.2.2/).
+- We adopt `hdrvdp-2.2.2` toolkit, and you can download it from this [link](https://sourceforge.net/projects/hdrvdp/files/hdrvdp/2.2.2/).
 - Then we write code in `Content.m` and execute it.
 - Code example in `Content.m`:
 
