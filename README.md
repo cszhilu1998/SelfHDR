@@ -56,6 +56,8 @@ Merging multi-exposure images is a common approach for obtaining high dynamic ra
 - Dataset and pre-trained models can be downloaded from this [link](https://pan.baidu.com/s/1XsIiXmN_5wn_dfz4SsyTNA?pwd=i7fc).
 - Place the pre-trained models in the `./pretrained_models/` folder.
 
+  **Note: If you cannot get a Baidu account, please use [TeraBox](https://terabox.com) and click [https://terabox.com/s/1VxpH6Ze72sZY2W0MJXwILw](https://terabox.com/s/1VxpH6Ze72sZY2W0MJXwILw) to download.**
+
 ### 2.3  Image Alignment
 
 - In the dataset, the folders ending with `_align` contain aligned multi-exposure images.
